@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&display=swap");
+
+@import "variables";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Raleway", sans-serif;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(135deg, $bg-1, $bg-2, $bg-1);
+	&::before {
+		content: "";
+		position: absolute;
+		width: 30vw;
+		height: 30vw;
+		border: 5vw solid $bg-3;
+		border-radius: 50%;
+		box-shadow: 0 0 0 1vw $bg-2, 0 0 0 1.3vw $white;
+	}
+
+	.year20,
+	.year21 {
+		position: absolute;
+		color: $white;
+		text-align: center;
+		line-height: 1.5em;
+		z-index: 10;
+		transform: skewY(-7deg);
+		text-shadow: 1px 1px 0 $shadow, 2px 2px 0 $shadow, 3px 3px 0 $shadow,
+			4px 4px 0 $shadow, 5px 5px 0 $shadow, 10px 10px 0 rgba(0, 0, 0, 0.2);
+	}
+	.year21 {
+		font-size: 9vw;
+		animation: floating 5s infinite ease-in-out;
+		span {
+			font-size: 3em;
+			font-weight: 700;
+			text-shadow: 1px 1px 0 $shadow, 2px 2px 0 $shadow, 3px 3px 0 $shadow,
+				4px 4px 0 $shadow, 5px 5px 0 $shadow, 6px 6px 0 $shadow,
+				7px 7px 0 $shadow, 8px 8px 0 $shadow, 9px 9px 0 $shadow,
+				20px 20px 0 rgba(0, 0, 0, 0.2);
+		}
+	}
+	.year20 {
+		font-size: 3vw;
+		bottom: 0;
+		animation: fade 5s infinite ease-in-out;
+	}
+	i {
+		position: absolute;
+		background: linear-gradient(45deg, $stars1, $stars2);
+		border-radius: 50%;
+		box-shadow: 0 0 10px $white, 0 0 20px $white, 0 0 40px $white,
+			0 0 80px $white;
+		animation: glow linear infinite;
+	}
+}
+@keyframes glow {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes floating {
+	0%,
+	100% {
+		transform: skewY(-7deg) translate(0, -20px);
+	}
+	50% {
+		transform: skewY(-7deg) translate(0, 20px);
+	}
+}
+@keyframes fade {
+	0%,
+	100% {
+		opacity: 1;
+		transform: skewY(-7deg) translate(0, -20px);
+	}
+	50% {
+		opacity: 0;
+		transform: skewY(-7deg) translate(0, 20px);
+	}
+}

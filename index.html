@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Happy New Year 2021</title>
+	</head>
+	<body>
+		<section>
+			<h2 class="year21">Happy New Year<br /><span>2021</span></h2>
+			<h5 class="year20">Bye 2020</h5>
+		</section>
+
+		<script>
+			const stars = () => {
+				const count = 200;
+				const section = document.querySelector("section");
+				let i = 0;
+				while (i < count) {
+					const star = document.createElement("i");
+					const posX = Math.floor(Math.random() * window.innerWidth);
+					const posY = Math.floor(Math.random() * window.innerHeight);
+
+					const starSize = Math.random() * 4;
+					star.style.left = posX + "px";
+					star.style.top = posY + "px";
+					star.style.width = starSize + 5 + "px";
+					star.style.height = starSize + 5 + "px";
+
+					const starDuration = Math.random() * 4;
+					star.style.animationDuration = 2 + starDuration + "s";
+					star.style.animationDelay = starDuration + "s";
+					section.appendChild(star);
+					i++;
+				}
+			};
+			stars();
+		</script>
+	</body>
+</html>
